@@ -9,4 +9,4 @@ app.use(express.urlencoded({extended: true}))
 //routes
 app.use(apiRoutes)
 
-app.listen(PORT, () => console.log(`pokemon API listening at ${PORT}`))
+app.listen(PORT, () => console.log(`API listening at ${PORT}`))
