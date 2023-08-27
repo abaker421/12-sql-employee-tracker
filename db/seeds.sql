@@ -1,6 +1,7 @@
 INSERT INTO departments (
     name
-) VALUES ('Sales'), 
+) VALUES 
+('Sales'), 
 ('Support'), 
 ('Marketing'), 
 ('Orders');

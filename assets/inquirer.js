@@ -4,11 +4,10 @@ inquirer.prompt({
     type: 'list',
     name: 'userSelection',
     message: 'What would you like to see?',
-    choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee', 'update an employee role'],
-    default: 'view all departments'
+    choices: ['View all departments', 'View all roles', 'View all employees', 'Add a department', 'Add a role', 'Add an employee', 'Update an employee role'],
+    default: 'View all departments'
+})
+.then((answers) => {
+console.log(answers)
+})
 
-}) .then((answers) => {
-    
-}) .catch (err) {
-
-}
