@@ -7,8 +7,8 @@ inquirer.prompt({
     choices: ['View all departments', 'View all roles', 'View all employees', 'Add a department', 'Add a role', 'Add an employee', 'Update an employee role'],
     default: 'View all departments'
 })
-.then((userSelection) => {
-    switch(userSelection) {
+.then((answers) => {
+    switch(answers.userSelection) {
         case "View all departments":
             console.log('Success')
             break;
@@ -33,3 +33,6 @@ inquirer.prompt({
 }) .catch( (err) => {
     console.error(err)
 })
+
+
+module.exports= questions
