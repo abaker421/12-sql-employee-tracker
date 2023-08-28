@@ -12,8 +12,23 @@ const viewAllDepartments = () => {
     console.log()
 }
 
-const addDepartment()
+const addDepartment = () => {
+    inquirer.prompt([
+        {name: 'name',
+        type: 'input',
+        message: "Name the department to be added:"}
+    ])
+    .then(function(answer) {
+    const query= `INSERT INTO departments (name) VALUES (?)`
+    connection.query(query, [answer.name], 
+    function(err, res, fields){
+        if (err) throw err
+        console.log('Department Successfully Added!')
+    })
+})
+}
 
-viewAllDepartments()
+
+addDepartment()
 
 module.exports= router
