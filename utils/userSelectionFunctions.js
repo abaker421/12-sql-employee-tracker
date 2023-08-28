@@ -1,4 +1,3 @@
-const router= require('express').Router()
 const connection = require('../db/connection.js')
 const inquirer = require('inquirer')
 
@@ -64,8 +63,10 @@ const addEmployee = () => {
         }
     ])
     .then(function(answer){
+        const managerId = answer.manager_id === '0' ? null : answer.manager_id
+        //allows a 0 to be accepted and converted to null for teh database
         let query = `INSERT INTO employees(first_name, last_name, role_id, manager_id) VALUES (?,?,?,?)`
-        connection.query(query, [answer.first_name, answer.last_name, answer.role_id, answer.manager_id],
+        connection.query(query, [answer.first_name, answer.last_name, answer.role_id, managerId],
             function (err, res, fields) {
                 if (err) throw err
                 console.log('Employee Added Successfully!')
