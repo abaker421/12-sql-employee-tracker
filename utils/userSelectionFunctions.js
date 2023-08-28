@@ -103,8 +103,10 @@ const updateEmployee = () => {
             message: 'What is the Employee ID of their manager? Type 0 if no manager'
         }
     ]).then ((answer) =>{
+        const managerID = answer.manager_id === '0' ? null : answer.manager_id
+        //allows a 0 to be accepted and converted to null for teh database
         let query= `UPDATE employees SET first_name=?, last_name=?, role_id=?, manager_id=? WHERE ID=?`
-        connection.query(query, [answer.first_name, answer.last_name, answer.role_id, answer.manager_id, answer.updateID],
+        connection.query(query, [answer.first_name, answer.last_name, answer.role_id, managerID, answer.updateID],
             function (err, res, fields) {
                 if (err) throw err
                 console.log("Employee updated successfully!")
