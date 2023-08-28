@@ -82,6 +82,4 @@ const updateEmployee = () => {
     })
 }
 
-updateEmployee()
-
 module.exports= router
