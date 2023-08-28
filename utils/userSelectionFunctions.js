@@ -8,6 +8,7 @@ const viewAllDepartments = () => {
     connection.query(query, (err, rows) => {
         if (err) {console.log(err)}
         console.table(rows)
+        connection.end()
     })
     console.log()
 }
@@ -24,6 +25,7 @@ const addDepartment = () => {
     function(err, res, fields){
         if (err) throw err
         console.log('Department Successfully Added!')
+        connection.end()
     })
 })
 }
@@ -35,7 +37,7 @@ const viewAllEmployees = () => {
         if (err) {console.log(err)}
         console.table(rows)
     })
-    console.log()
+    connection.end()
 }
 
 const addEmployee = () => {
@@ -67,6 +69,7 @@ const addEmployee = () => {
             function (err, res, fields) {
                 if (err) throw err
                 console.log('Employee Added Successfully!')
+                connection.end()
             })
     })
 }
@@ -104,6 +107,7 @@ const updateEmployee = () => {
             function (err, res, fields) {
                 if (err) throw err
                 console.log("Employee updated successfully!")
+                connection.end()
             })
     })
 }
@@ -115,7 +119,7 @@ const viewAllRoles = () => {
         if (err) {console.log(err)}
         console.table(rows)
     })
-    console.log()
+    connection.end()
 }
 
 const addRole = () => {
@@ -142,6 +146,7 @@ const addRole = () => {
             function (err, res, fields) {
                 if (err) throw err
                 console.log('Role Added Successfully!')
+                connection.end()
             })
     })
 }
