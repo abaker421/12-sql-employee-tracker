@@ -28,7 +28,4 @@ const addDepartment = () => {
 })
 }
 
-
-addDepartment()
-
 module.exports= router
