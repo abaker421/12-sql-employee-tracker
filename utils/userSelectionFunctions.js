@@ -146,4 +146,12 @@ const addRole = () => {
     })
 }
 
-module.exports= router
+module.exports= {
+    viewAllDepartments,
+    addDepartment,
+    viewAllEmployees,
+    addEmployee,
+    updateEmployee,
+    viewAllRoles,
+    addRole
+}

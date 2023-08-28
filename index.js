@@ -1,4 +1,13 @@
 const inquirer = require('inquirer')
+const {
+    viewAllDepartments,
+    addDepartment,
+    viewAllEmployees,
+    addEmployee,
+    updateEmployee,
+    viewAllRoles,
+    addRole
+} = require('./utils/userSelectionFunctions')
 
 inquirer.prompt({
     type: 'list',
@@ -10,29 +19,26 @@ inquirer.prompt({
 .then((answers) => {
     switch(answers.userSelection) {
         case "View all departments":
-            console.log('Success')
+            viewAllDepartments()
             break;
         case "View all roles":
-            console.log('')
+            viewAllRoles()
             break;
         case "View all employees":
-            console.log('')
+            viewAllEmployees()
             break;
         case "Add a department":
-            console.log('')
+            addDepartment()
             break;
         case 'Add a role':
-            console.log('')
+            addRole()
             break;
         case 'Add an employee':
-            console.log('')
+            addEmployee()
             break;
         case 'Update an employee role':
-            console.log('')
+            updateEmployee()
             break;}
 }) .catch( (err) => {
     console.error(err)
 })
-
-
-module.exports= questions
