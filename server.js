@@ -1,4 +1,3 @@
-const apiRoutes= require('./routes/blank_routes')
 const express= require('express')
 const app= express()
 const PORT= process.env.PORT || 3001

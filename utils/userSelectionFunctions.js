@@ -7,7 +7,7 @@ const viewAllDepartments = () => {
     connection.query(query, (err, rows) => {
         if (err) {console.log(err)}
         console.table(rows)
-        connection.end()
+        exitMenu()
     })
     console.log()
 }
@@ -24,7 +24,7 @@ const addDepartment = () => {
     function(err, res, fields){
         if (err) throw err
         console.log('Department Successfully Added!')
-        connection.end()
+        exitMenu()
     })
 })
 }
@@ -36,7 +36,7 @@ const viewAllEmployees = () => {
         if (err) {console.log(err)}
         console.table(rows)
     })
-    connection.end()
+    exitMenu()
 }
 
 const addEmployee = () => {
@@ -70,7 +70,7 @@ const addEmployee = () => {
             function (err, res, fields) {
                 if (err) throw err
                 console.log('Employee Added Successfully!')
-                connection.end()
+                exitMenu()
             })
     })
 }
@@ -108,7 +108,7 @@ const updateEmployee = () => {
             function (err, res, fields) {
                 if (err) throw err
                 console.log("Employee updated successfully!")
-                connection.end()
+                exitMenu()
             })
     })
 }
@@ -120,7 +120,7 @@ const viewAllRoles = () => {
         if (err) {console.log(err)}
         console.table(rows)
     })
-    connection.end()
+    exitMenu()
 }
 
 const addRole = () => {
@@ -147,9 +147,13 @@ const addRole = () => {
             function (err, res, fields) {
                 if (err) throw err
                 console.log('Role Added Successfully!')
-                connection.end()
+                exitMenu()
             })
     })
+}
+
+const exitMenu = () => {
+    connection.end()
 }
 
 module.exports= {
@@ -159,5 +163,6 @@ module.exports= {
     addEmployee,
     updateEmployee,
     viewAllRoles,
-    addRole
+    addRole,
+    exitMenu
 }

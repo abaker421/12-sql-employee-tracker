@@ -6,7 +6,8 @@ const {
     addEmployee,
     updateEmployee,
     viewAllRoles,
-    addRole
+    addRole,
+    exitMenu
 } = require('./utils/userSelectionFunctions')
 
 inquirer.prompt({
@@ -19,11 +20,13 @@ inquirer.prompt({
     'Add a department', 
     'Add a role', 
     'Add an employee', 
-    'Update an employee role'],
+    'Update an employee role',
+    'Exit the application'],
     default: 'View all departments'
 })
 .then((answers) => {
-    switch(answers.userSelection) {
+    switch(answers.userSelection) 
+    {
         case "View all departments":
             viewAllDepartments()
             break;
@@ -44,7 +47,11 @@ inquirer.prompt({
             break;
         case 'Update an employee role':
             updateEmployee()
-            break;}
+            break;
+        case 'Exit the application':
+            console.log('Take care!')    
+            exitMenu()
+        }
 }) .catch( (err) => {
     console.error(err)
 })
