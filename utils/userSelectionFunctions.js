@@ -12,21 +12,23 @@ const viewAllDepartments = () => {
     console.log()
 }
 
-const addDepartment = () => {
-    inquirer.prompt([
-        {name: 'name',
-        type: 'input',
-        message: "Name the department to be added:"}
+const addDepartment =  () => {
+    const answer =  inquirer.prompt([
+        {
+            name: 'name',
+            type: 'input',
+            message: "Name the department to be added:"
+        }
     ])
-    .then(function(answer) {
-    let query= `INSERT INTO departments (name) VALUES (?)`
-    connection.query(query, [answer.name], 
-    function(err, res, fields){
-        if (err) throw err
+
+    try {
+        let query = `INSERT INTO departments (name) VALUES (?)`
+        connection.query(query, [answer.name])
         console.log('Department Successfully Added!')
         exitMenu()
-    })
-})
+    } catch (err) {
+        console.error(err)
+    }
 }
 
 const viewAllEmployees = () => {

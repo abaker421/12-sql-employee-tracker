@@ -10,7 +10,7 @@ const {
     exitMenu
 } = require('./utils/userSelectionFunctions')
 
-inquirer.prompt({
+    inquirer.prompt({
     type: 'list',
     name: 'userSelection',
     message: 'What would you like to see?',

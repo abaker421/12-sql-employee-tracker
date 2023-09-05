@@ -33,6 +33,10 @@ Open a terminal in the root folder containing the index.js and type node index, 
 
 N/A
 
+Demo Video:
+
+https://drive.google.com/file/d/1JgFrH77-7mEzcz73D127IQnXsuUWbEoS/view?usp=drive_link
+
 Screenshot:
 
 ![image](https://github.com/bakeradm6/12-sql-employee-tracker/assets/123577761/f705e400-8182-4cec-b997-e544be8eca86)
